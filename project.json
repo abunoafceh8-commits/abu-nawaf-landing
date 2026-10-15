@@ -1,0 +1,17 @@
+{
+  "name": "abu-nawaf-landing",
+  "title": "ابونواف | هكر أخلاقي | خدمات استعادة الحسابات في السعودية",
+  "category": "صفحات هبوط",
+  "description": "صفحة هبوط أبو نواف.",
+  "liveUrl": "https://abu-nawaf-be6o.arcada.app/",
+  "aliases": [],
+  "sourceLinks": [],
+  "originalTitle": "ابونواف | هكر أخلاقي | خدمات استعادة الحسابات في السعودية",
+  "originalDescription": "هكر أخلاقي سعودي - استعادة الحسابات المخترقة، تأمين الحسابات، مكافحة الابتزاز، فحص الثغرات. خدمات احترافية في الرياض.",
+  "type": "static-website",
+  "archivedAt": "2026-10-15",
+  "readyForHosting": true,
+  "files": [
+    "index.html"
+  ]
+}
