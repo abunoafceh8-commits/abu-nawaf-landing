@@ -1,0 +1,12 @@
+/* TEAM */
+Role:   Founder · Ethical Hacker · Security Engineer
+Name:   أبو نواف — Abu Nawaf
+Mail:   abunoaf.ceh8@gmail.com
+GitHub: https://github.com/abunoafceh8-commits
+Hub:    https://abu-nawaf-hub.vercel.app
+
+/* SITE */
+Standards: HTML5, ES2022, ARIA, RTL-first
+Engine:    AbuNawaf Enhance v2.0
+Software:  Vanilla JS · Vercel · MIT
+Note:      100% client-side · no tracking · no analytics

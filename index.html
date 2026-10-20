@@ -1,383 +1,532 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- SEO Meta Tags -->
-    <title>ابونواف | هكر أخلاقي | خدمات استعادة الحسابات في السعودية</title>
-    <meta name="description" content="هكر أخلاقي سعودي - استعادة الحسابات المخترقة، تأمين الحسابات، مكافحة الابتزاز، فحص الثغرات. خدمات احترافية في الرياض.">
-    <meta name="keywords" content="هكر أخلاقي, استعادة حسابات, استرجاع حساب فيسبوك, مكافحة ابتزاز, هكر سعودي, أمن سيبراني">
-    <meta name="author" content="فريق ابونواف">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#2563eb">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="ابونواف | هكر أخلاقي">
-    <meta property="og:description" content="خدمات استعادة الحسابات وتأمينها في السعودية">
-    <meta property="og:image" content="https://elias0878.github.io/accounts/-nvy8vy.jpg">
-    <meta property="og:type" content="website">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="https://elias0878.github.io/accounts/-nvy8vy.jpg">
-    
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #F8FAFC;
-            color: #1F2937;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        
-        /* Header */
-        .header {
-            background: white;
-            border-bottom: 1px solid #E5E7EB;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .logo {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 2px solid #2563EB;
-            overflow: hidden;
-        }
-        
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .header-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: #111827;
-        }
-        
-        .header-title {
-            font-size: 12px;
-            color: #6B7280;
-        }
-        
-        .status {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-        
-        .status.online {
-            background: #DCFCE7;
-            color: #166534;
-        }
-        
-        .status.offline {
-            background: #FEE2E2;
-            color: #991B1B;
-        }
-        
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
-        
-        .status.online .status-dot {
-            background: #22C55E;
-        }
-        
-        .status.offline .status-dot {
-            background: #EF4444;
-        }
-        
-        /* Main Container */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            padding-bottom: 100px;
-        }
-        
-        /* Stats */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-        
-        .stat-card {
-            background: white;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .stat-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .stat-icon.blue {
-            background: #EFF6FF;
-            color: #2563EB;
-        }
-        
-        .stat-icon.green {
-            background: #F0FDF4;
-            color: #16A34A;
-        }
-        
-        .stat-label {
-            font-size: 12px;
-            color: #6B7280;
-        }
-        
-        .stat-value {
-            font-size: 20px;
-            font-weight: 700;
-            color: #111827;
-        }
-        
-        /* Cards */
-        .card {
-            background: white;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 16px;
-        }
-        
-        .card-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .card-title svg {
-            width: 20px;
-            height: 20px;
-            color: #2563EB;
-        }
-        
-        /* Info Grid */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-        }
-        
-        .info-item svg {
-            width: 16px;
-            height: 16px;
-            color: #9CA3AF;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-        
-        .info-text {
-            font-size: 14px;
-            color: #374151;
-        }
-        
-        .info-text small {
-            font-size: 12px;
-            color: #EF4444;
-        }
-        
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-        
-        @media (max-width: 600px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .service-item {
-            background: white;
-            border: 1px solid #E5E7EB;
-            border-radius: 10px;
-            padding: 12px;
-            transition: box-shadow 0.2s;
-        }
-        
-        .service-item:hover {
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-        }
-        
-        .service-icon {
-            width: 32px;
-            height: 32px;
-            background: #EFF6FF;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 8px;
-        }
-        
-        .service-icon svg {
-            width: 16px;
-            height: 16px;
-            color: #2563EB;
-        }
-        
-        .service-name {
-            font-size: 13px;
-            font-weight: 600;
-            color: #111827;
-        }
-        
-        .service-desc {
-            font-size: 11px;
-            color: #6B7280;
-        }
-        
-        /* Social Grid */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-        
-        @media (max-width: 500px) {
-            .social-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .social-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            padding: 14px 10px;
-            border-radius: 10px;
-            color: white;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .social-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        
-        .social-link svg {
-            width: 22px;
-            height: 22px;
-        }
-        
-        .social-link span {
-            font-size: 11px;
-            font-weight: 500;
-        }
-        
-        .bg-facebook { background: #1877F2; }
-        .bg-instagram { background: linear-gradient(45deg, #833AB4, #FD1D1D, #F77737); }
-        .bg-snapchat { background: #FFFC00; color: #111; }
-        .bg-tiktok { background: #000; }
-        .bg-twitter { background: #000; }
-        .bg-telegram { background: #0088CC; }
-        .bg-github { background: #333; }
-        
-        /* Quick Links */
-        .quick-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px;
-            background: white;
-            border: 1px solid #E5E7EB;
-            border-radius: 10px;
-            text-decoration: none;
-            color: inherit;
-            margin-bottom: 10px;
-            transition: border-color 0.2s;
-        }
-        
-        .quick-link:hover {
-            border-color: #93C5FD;
-        }
-        
-        .quick-link.urgent {\n            background: #FEF2F2;\n            border-color: #FECACA;\n        }\n        \n        .quick-link.urgent:hover {\n            border-color: #F87171;\n        }\n        \n        .quick-icon {\n            width: 40px;\n            height: 40px;\n            border-radius: 8px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n        \n        .quick-icon.blue {\n            background: #EFF6FF;\n            color: #2563EB;\n        }\n        \n        .quick-icon.red {\n            background: #FEE2E2;\n            color: #DC2626;\n        }\n        \n        .quick-icon svg {\n            width: 20px;\n            height: 20px;\n        }\n        \n        .quick-content {\n            flex: 1;\n        }\n        \n        .quick-title {\n            font-size: 14px;\n            font-weight: 600;\n        }\n        \n        .quick-desc {\n            font-size: 12px;\n            color: #6B7280;\n        }\n        \n        .quick-arrow {\n            width: 20px;\n            height: 20px;\n            color: #9CA3AF;\n        }\n        \n        /* Action Buttons */\n        .actions-grid {\n            display: grid;\n            grid-template-columns: repeat(2, 1fr);\n            gap: 12px;\n            margin-bottom: 20px;\n        }\n        \n        .action-btn {\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            gap: 8px;\n            padding: 16px;\n            border-radius: 10px;\n            border: none;\n            cursor: pointer;\n            font-family: inherit;\n            font-size: 14px;\n            font-weight: 600;\n            color: white;\n            transition: opacity 0.2s;\n        }\n        \n        .action-btn:hover {\n            opacity: 0.9;\n        }\n        \n        .action-btn.dark {\n            background: #111827;\n        }\n        \n        .action-btn.blue {\n            background: #2563EB;\n        }\n        \n        .action-btn svg {\n            width: 18px;\n            height: 18px;\n        }\n        \n        /* Bottom Bar */\n        .bottom-bar {\n            position: fixed;\n            bottom: 0;\n            left: 0;\n            right: 0;\n            background: white;\n            border-top: 1px solid #E5E7EB;\n            z-index: 100;\n        }\n        \n        .bottom-content {\n            max-width: 800px;\n            margin: 0 auto;\n            padding: 12px 20px;\n            display: flex;\n            justify-content: center;\n            gap: 10px;\n        }\n        \n        .bottom-btn {\n            display: flex;\n            align-items: center;\n            gap: 6px;\n            padding: 10px 16px;\n            border-radius: 8px;\n            border: none;\n            cursor: pointer;\n            font-family: inherit;\n            font-size: 13px;\n            font-weight: 500;\n            text-decoration: none;\n            transition: background 0.2s;\n        }\n        \n        .bottom-btn svg {\n            width: 16px;\n            height: 16px;\n        }\n        \n        .bottom-btn.primary {\n            background: #3B82F6;\n            color: white;\n        }\n        \n        .bottom-btn.primary:hover {\n            background: #2563EB;\n        }\n        \n        .bottom-btn.secondary {\n            background: #F3F4F6;\n            color: #374151;\n        }\n        \n        .bottom-btn.secondary:hover {\n            background: #E5E7EB;\n        }\n        \n        /* Modal */\n        .modal-overlay {\n            position: fixed;\n            inset: 0;\n            background: rgba(0,0,0,0.5);\n            display: none;\n            align-items: center;\n            justify-content: center;\n            padding: 20px;\n            z-index: 200;\n        }\n        \n        .modal-overlay.active {\n            display: flex;\n        }\n        \n        .modal {\n            background: white;\n            border-radius: 16px;\n            width: 100%;\n            max-width: 420px;\n            max-height: 90vh;\n            overflow-y: auto;\n        }\n        \n        .modal-header {\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            padding: 20px;\n            border-bottom: 1px solid #E5E7EB;\n        }\n        \n        .modal-title {\n            font-size: 18px;\n            font-weight: 700;\n        }\n        \n        .modal-close {\n            width: 32px;\n            height: 32px;\n            border: none;\n            background: #F3F4F6;\n            border-radius: 8px;\n            cursor: pointer;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n        \n        .modal-close svg {\n            width: 20px;\n            height: 20px;\n        }\n        \n        .modal-body {\n            padding: 20px;\n        }\n        \n        .modal-section {\n            background: #F9FAFB;\n            border-radius: 10px;\n            padding: 16px;\n            margin-bottom: 12px;\n        }\n        \n        .modal-section-title {\n            font-size: 13px;\n            font-weight: 600;\n            color: #374151;\n            margin-bottom: 12px;\n        }\n        \n        .modal-social-grid {\n            display: grid;\n            grid-template-columns: repeat(4, 1fr);\n            gap: 8px;\n        }\n        \n        .modal-social-link {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            gap: 4px;\n            padding: 10px 6px;\n            border-radius: 8px;\n            color: white;\n            text-decoration: none;\n        }\n        \n        .modal-social-link svg {\n            width: 18px;\n            height: 18px;\n        }\n        \n        .modal-social-link span {\n            font-size: 10px;\n        }\n        \n        .smart-request-btn {\n            display: flex;\n            align-items: center;\n            gap: 12px;\n            padding: 16px;\n            background: #2563EB;\n            color: white;\n            border-radius: 10px;\n            text-decoration: none;\n            transition: background 0.2s;\n        }\n        \n        .smart-request-btn:hover {\n            background: #1D4ED8;\n        }\n        \n        .smart-request-btn svg {\n            width: 20px;\n            height: 20px;\n        }\n        \n        .smart-request-content {\n            flex: 1;\n        }\n        \n        .smart-request-title {\n            font-weight: 600;\n        }\n        \n        .smart-request-desc {\n            font-size: 12px;\n            opacity: 0.8;\n        }\n        \n        /* Terms Sections */\n        .terms-section {\n            border-radius: 10px;\n            padding: 16px;\n            margin-bottom: 12px;\n        }\n        \n        .terms-section.blue {\n            background: #EFF6FF;\n            border: 1px solid #BFDBFE;\n        }\n        \n        .terms-section.green {\n            background: #F0FDF4;\n            border: 1px solid #BBF7D0;\n        }\n        \n        .terms-section.red {\n            background: #FEF2F2;\n            border: 1px solid #FECACA;\n        }\n        \n        .terms-section-title {\n            font-size: 14px;\n            font-weight: 700;\n            margin-bottom: 10px;\n        }\n        \n        .terms-section.blue .terms-section-title { color: #1E40AF; }\n        .terms-section.green .terms-section-title { color: #166534; }\n        .terms-section.red .terms-section-title { color: #991B1B; }\n        \n        .terms-list {\n            list-style: none;\n        }\n        \n        .terms-list li {\n            display: flex;\n            align-items: flex-start;\n            gap: 8px;\n            font-size: 13px;\n            margin-bottom: 8px;\n        }\n        \n        .terms-list li svg {\n            width: 16px;\n            height: 16px;\n            margin-top: 2px;\n            flex-shrink: 0;\n        }\n        \n        .terms-list li .check { color: #22C55E; }\n        .terms-list li .warning { color: #EF4444; }\n        .terms-list li .info { color: #3B82F6; }\n        \n        .steps-list {\n            list-style: none;\n        }\n        \n        .steps-list li {\n            display: flex;\n            align-items: center;\n            gap: 10px;\n            font-size: 13px;\n            margin-bottom: 6px;\n        }\n        \n        .step-number {\n            width: 24px;\n            height: 24px;\n            background: #BBF7D0;\n            color: #166534;\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-size: 12px;\n            font-weight: 700;\n        }\n        \n        .modal-footer {\n            padding: 20px;\n            text-align: center;\n            border-top: 1px solid #E5E7EB;\n        }\n        \n        .modal-footer-btn {\n            padding: 10px 24px;\n            background: #111827;\n            color: white;\n            border: none;\n            border-radius: 8px;\n            font-family: inherit;\n            font-size: 14px;\n            font-weight: 600;\n            cursor: pointer;\n        }\n        \n        /* Tools Page */\n        .tools-header {\n            display: flex;\n            align-items: center;\n            gap: 12px;\n            margin-bottom: 20px;\n        }\n        \n        .back-btn {\n            width: 36px;\n            height: 36px;\n            border: none;\n            background: #F3F4F6;\n            border-radius: 8px;\n            cursor: pointer;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n        \n        .back-btn svg {\n            width: 20px;\n            height: 20px;\n        }\n        \n        .tools-title {\n            font-size: 18px;\n            font-weight: 700;\n        }\n        \n        .tools-list {\n            display: flex;\n            flex-direction: column;\n            gap: 10px;\n        }\n        \n        .tool-item {\n            display: flex;\n            align-items: center;\n            gap: 12px;\n            padding: 16px;\n            background: white;\n            border: 1px solid #E5E7EB;\n            border-radius: 10px;\n            text-decoration: none;\n            color: inherit;\n            transition: border-color 0.2s;\n        }\n        \n        .tool-item:hover {\n            border-color: #93C5FD;\n        }\n        \n        .tool-icon {\n            width: 40px;\n            height: 40px;\n            background: #F3F4F6;\n            border-radius: 8px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n        \n        .tool-icon svg {\n            width: 20px;\n            height: 20px;\n            color: #374151;\n        }\n        \n        .tool-content {\n            flex: 1;\n        }\n        \n        .tool-name {\n            font-size: 14px;\n            font-weight: 600;\n            color: #111827;\n        }\n        \n        .tool-desc {\n            font-size: 12px;\n            color: #6B7280;\n        }\n        \n        .tool-arrow {\n            width: 16px;\n            height: 16px;\n            color: #9CA3AF;\n        }\n        \n        /* Hidden */\n        .hidden {\n            display: none !important;\n        }\n        \n        /* Footer */\n        .footer {\n            text-align: center;\n            padding: 16px;\n            font-size: 12px;\n            color: #9CA3AF;\n        }\n    </style>\n  <script data-arena-recording="true">(function(){
-"use strict";
-var SK="__arena_rec",RRWEB_CDN="https://cdn.jsdelivr.net/npm/rrweb@2.0.0-alpha.4/dist/rrweb.min.js";
-var MAX_RECORDING_MS=600000,MAX_RRWEB_EVENTS=30000,MAX_INTERACTIONS=5000,MAX_CURSOR_POINTS=10000,recStopped=false;
-var stored=null;try{var raw=sessionStorage.getItem(SK);if(raw)stored=JSON.parse(raw);}catch(ex){}
-var meta=stored?stored.m||null:null,rrwebEvents=stored?stored.r||[]:[],rrwebStarted=false,startTime=stored?stored.st||Date.now():Date.now();
-var interactions=stored?stored.i||[]:[],cursorPath=stored?stored.c||[]:[],lastCursorSample=0,lastScrollSample=0;
-var pageHeight=document.documentElement.scrollHeight;
-var viewport={width:window.innerWidth,height:window.innerHeight};
-function isCapped(){if(recStopped)return true;if(Date.now()-startTime>=MAX_RECORDING_MS){recStopped=true;return true;}return false;}
-function persist(){try{var d=JSON.stringify({r:rrwebEvents,i:interactions,c:cursorPath,m:meta,st:startTime});sessionStorage.setItem(SK,d);}catch(ex){rrwebEvents=rrwebEvents.slice(Math.floor(rrwebEvents.length/2));try{sessionStorage.setItem(SK,JSON.stringify({r:rrwebEvents,i:interactions,c:cursorPath,m:meta,st:startTime}));}catch(ex2){}}}
-setInterval(persist,5000);
-window.addEventListener("resize",function(){viewport={width:window.innerWidth,height:window.innerHeight};pageHeight=document.documentElement.scrollHeight;});
-document.addEventListener("click",function(e){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;var el=e.target;var tag=el.tagName?el.tagName.toLowerCase():"";var text=(el.textContent||"").trim().substring(0,80);var classes=el.className&&typeof el.className==="string"?el.className.substring(0,120):"";interactions.push({type:"click",t:Date.now()-startTime,x:Math.round(e.clientX),y:Math.round(e.clientY),element:{tag:tag,text:text,classes:classes}});},true);
-window.addEventListener("scroll",function(){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;var now=Date.now();if(now-lastScrollSample<200)return;lastScrollSample=now;var scrollY=Math.round(window.scrollY||window.pageYOffset||0);var depthPct=pageHeight>viewport.height?Math.min(100,Math.round(((scrollY+viewport.height)/pageHeight)*100)):100;interactions.push({type:"scroll",t:now-startTime,y:scrollY,depth_pct:depthPct});},{passive:true});
-document.addEventListener("mousemove",function(e){if(isCapped()||cursorPath.length>=MAX_CURSOR_POINTS)return;var now=Date.now();if(now-lastCursorSample<250)return;lastCursorSample=now;cursorPath.push([Math.round(e.clientX),Math.round(e.clientY),now-startTime]);},{passive:true});
-document.addEventListener("keydown",function(e){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;interactions.push({type:"keydown",t:Date.now()-startTime,key:e.key});},true);
-function buildAnalytics(){if(!meta)return null;var ph=document.documentElement.scrollHeight;var maxScroll=0,clickElements={},firstClick=null,firstScroll=null,totalDistance=0;for(var i=0;i<interactions.length;i++){var ev=interactions[i];if(ev.type==="scroll"){if(ev.depth_pct>maxScroll)maxScroll=ev.depth_pct;if(!firstScroll)firstScroll=ev.t;}if(ev.type==="click"){if(!firstClick)firstClick=ev.t;var key=ev.element.tag+":"+ev.element.text.substring(0,30);clickElements[key]=true;}}for(var j=1;j<cursorPath.length;j++){var dx=cursorPath[j][0]-cursorPath[j-1][0];var dy=cursorPath[j][1]-cursorPath[j-1][1];totalDistance+=Math.sqrt(dx*dx+dy*dy);}var duration=Date.now()-startTime;var clickHeatmap=[];for(var k=0;k<interactions.length;k++){if(interactions[k].type==="click")clickHeatmap.push([interactions[k].x,interactions[k].y]);}return{generation_id:meta.generationId,tournament_id:meta.tournamentId,started_at:new Date(startTime).toISOString(),ended_at:new Date().toISOString(),duration_ms:duration,viewport:viewport,page_height:ph,interactions:interactions,cursor_path:cursorPath,click_heatmap:clickHeatmap,summary:{total_clicks:clickHeatmap.length,total_scrolls:interactions.filter(function(e){return e.type==="scroll";}).length,max_scroll_depth_pct:maxScroll,unique_elements_clicked:Object.keys(clickElements).length,time_to_first_click_ms:firstClick,time_to_first_scroll_ms:firstScroll,cursor_distance_px:Math.round(totalDistance),active_time_ms:duration}};}
-function loadRrweb(){if(rrwebStarted)return;rrwebStarted=true;var s=document.createElement("script");s.src=RRWEB_CDN;s.onload=function(){var rec=(window.rrweb&&window.rrweb.record)||window.rrwebRecord;if(!rec)return;rec({emit:function(event){if(rrwebEvents.length>=MAX_RRWEB_EVENTS||isCapped())return;rrwebEvents.push(event);}});};s.onerror=function(){};document.head.appendChild(s);}
-window.addEventListener("message",function(e){if(!e.data||typeof e.data.type!=="string")return;if(e.data.type==="arena:init"){if(!meta)startTime=Date.now();meta={generationId:e.data.generationId||e.data.modelId,tournamentId:e.data.tournamentId};persist();loadRrweb();if(e.source)e.source.postMessage({type:"arena:init-ack",generationId:meta.generationId},"*");}if(e.data.type==="arena:flush"){var resp={type:"arena:recording-data",generationId:meta?meta.generationId:null,rrwebEvents:rrwebEvents,analytics:buildAnalytics()};try{sessionStorage.removeItem(SK);}catch(ex){}if(e.source)e.source.postMessage(resp,"*");}});
-loadRrweb();
-})();</script>
-  <script data-arena-views="true">(function(){var isTop=false;try{isTop=window.self===window.top;}catch(e){}if(!isTop)return;window.__ARENA_META={generationId:"glm-5",tournamentId:"152c03e1-69ac-4751-baaf-edfad75759c3"};var payload={tournamentId:"152c03e1-69ac-4751-baaf-edfad75759c3",modelId:"glm-5"};try{var r=document.referrer;if(r){var u=new URL(r);payload.referrerDomain=u.hostname;}}catch(e){}try{var vid=null;try{vid=localStorage.getItem('arena_vid');}catch(e){}if(!vid){vid=typeof crypto!=="undefined"&&crypto.randomUUID?crypto.randomUUID():(Date.now().toString(36)+Math.random().toString(36).slice(2)).slice(0,32);try{localStorage.setItem('arena_vid',vid);}catch(e){}}if(vid)payload.viewerId=vid;}catch(e){}try{fetch("https://www.designarena.ai/api/agon/page-views",{"method":"POST","headers":{"Content-Type":"application/json"},"body":JSON.stringify(payload),"keepalive":true});}catch(e){}})();</script>
-</head>\n<body>\n    <!-- Header -->\n    <header class=\"header\">\n        <div class=\"header-content\">\n            <div class=\"header-left\">\n                <div class=\"logo\">\n                    <img src="https://abu-nawaf-be6o.arcada.app/\&quot;https://elias0878.github.io/accounts/-nvy8vy.jpg\&quot;" alt=\"ابونواف\">\n                </div>\n                <div>\n                    <div class=\"header-name\">ابونواف (الياس)</div>\n                    <div class=\"header-title\">هكر أخلاقي | باحث أمني</div>\n                </div>\n            </div>\n            <div class=\"status online\" id=\"status\">\n                <span class=\"status-dot\"></span>\n                <span id=\"statusText\">متاح</span>\n            </div>\n        </div>\n    </header>\n\n    <!-- Main Content -->\n    <main class=\"container\">\n        <!-- Home Page -->\n        <div id=\"homePage\">\n            <!-- Stats -->\n            <div class=\"stats-grid\">\n                <div class=\"stat-card\">\n                    <div class=\"stat-icon blue\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>\n                    </div>\n                    <div>\n                        <div class=\"stat-label\">زيارات اليوم</div>\n                        <div class=\"stat-value\" id=\"visitCount\">0</div>\n                    </div>\n                </div>\n                <div class=\"stat-card\">\n                    <div class=\"stat-icon green\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/></svg>\n                    </div>\n                    <div>\n                        <div class=\"stat-label\">طلبات اليوم</div>\n                        <div class=\"stat-value\" id=\"requestCount\">0</div>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Info Card -->\n            <div class=\"card\">\n                <div class=\"card-title\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10\"/></svg>\n                    فريق ابونواف\n                </div>\n                <div class=\"info-grid\">\n                    <div class=\"info-item\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg>\n                        <div class=\"info-text\">الرياض، حي الربيع</div>\n                    </div>\n                    <div class=\"info-item\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12 6 12 12 16 14\"/></svg>\n                        <div class=\"info-text\">2:30 م - 12:00 ص<br><small>مغلق الجمعة</small></div>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Services -->\n            <div class=\"card\">\n                <div class=\"card-title\">الخدمات</div>\n                <div class=\"services-grid\">\n                    <div class=\"service-item\">\n                        <div class=\"service-icon\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg>\n                        </div>\n                        <div class=\"service-name\">استعادة الحسابات</div>\n                        <div class=\"service-desc\">فيسبوك، انستجرام</div>\n                    </div>\n                    <div class=\"service-item\">\n                        <div class=\"service-icon\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10\"/><path d=\"m9 12 2 2 4-4\"/></svg>\n                        </div>\n                        <div class=\"service-name\">تأمين الحسابات</div>\n                        <div class=\"service-desc\">حماية من الاختراق</div>\n                    </div>\n                    <div class=\"service-item\">\n                        <div class=\"service-icon\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg>\n                        </div>\n                        <div class=\"service-name\">مكافحة الابتزاز</div>\n                        <div class=\"service-desc\">حلول فورية</div>\n                    </div>\n                    <div class=\"service-item\">\n                        <div class=\"service-icon\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m8 2 1.88 1.88\"/><path d=\"M14.12 3.88 16 2\"/><path d=\"M9 7.13v-1a3.003 3.003 0 1 1 6 0v1\"/><path d=\"M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6\"/><path d=\"M12 20v-9\"/><path d=\"M6 13a4 4 0 0 1 4-4\"/><path d=\"M14 9a4 4 0 0 1 4 4\"/></svg>\n                        </div>\n                        <div class=\"service-name\">فحص الثغرات</div>\n                        <div class=\"service-desc\">اختبار اختراق</div>\n                    </div>\n                    <div class=\"service-item\">\n                        <div class=\"service-icon\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"18\" height=\"11\" x=\"3\" y=\"11\" rx=\"2\" ry=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg>\n                        </div>\n                        <div class=\"service-name\">حماية الخصوصية</div>\n                        <div class=\"service-desc\">تأمين البيانات</div>\n                    </div>\n                    <div class=\"service-item\">\n                        <div class=\"service-icon\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"16\" x2=\"8\" y1=\"13\" y2=\"13\"/><line x1=\"16\" x2=\"8\" y1=\"17\" y2=\"17\"/><line x1=\"10\" x2=\"8\" y1=\"9\" y2=\"9\"/></svg>\n                        </div>\n                        <div class=\"service-name\">التحقيقات الرقمية</div>\n                        <div class=\"service-desc\">تتبع الأدلة</div>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Social Links -->\n            <div class=\"card\">\n                <div class=\"card-title\">حسابات التواصل</div>\n                <div class=\"social-grid\">\n                    <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://www.facebook.com/profile.php?id=61554330014413\&quot;" target=\"_blank\" class=\"social-link bg-facebook\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z\"/></svg>\n                        <span>فيسبوك</span>\n                    </a>\n                    <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://www.instagram.com/ksa_hack01\&quot;" target=\"_blank\" class=\"social-link bg-instagram\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"20\" x=\"2\" y=\"2\" rx=\"5\" ry=\"5\"/><path d=\"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z\"/><line x1=\"17.5\" x2=\"17.51\" y1=\"6.5\" y2=\"6.5\"/></svg>\n                        <span>انستجرام</span>\n                    </a>\n                    <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://www.snapchat.com/add/team_ant\&quot;" target=\"_blank\" class=\"social-link bg-snapchat\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12.17 4.17c-2.41 0-4.27 1.64-4.27 4.15 0 1.37.47 2.44.88 3.28.36.73.68 1.36.68 2.05 0 .87-.38 1.47-.93 1.47-.38 0-.65-.28-.65-.65 0-.4.27-.6.27-1.07 0-.53-.4-.93-.93-.93-.53 0-.93.4-.93.93 0 1.2.98 2.18 2.18 2.18 1.4 0 2.4-1.13 2.4-2.72 0-.93-.4-1.73-.8-2.53-.33-.67-.6-1.27-.6-1.93 0-1.13.73-1.87 1.87-1.87 1.07 0 1.8.67 1.8 1.67 0 .67-.33 1.2-.33 1.8 0 .6.4 1 .93 1 .53 0 .93-.4.93-1 0-.6-.33-1.13-.33-1.8 0-1 .73-1.67 1.8-1.67 1.13 0 1.87.73 1.87 1.87 0 .67-.27 1.27-.6 1.93-.4.8-.8 1.6-.8 2.53 0 1.6 1 2.72 2.4 2.72 1.2 0 2.18-.98 2.18-2.18 0-.53-.4-.93-.93-.93-.53 0-.93.4-.93.93 0 .47.27.67.27 1.07 0 .37-.27.65-.65.65-.55 0-.93-.6-.93-1.47 0-.67.33-1.33.68-2.05.4-.87.88-1.93.88-3.28 0-2.53-1.87-4.15-4.27-4.15z\"/></svg>\n                        <span>سناب شات</span>\n                    </a>\n                    <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://www.tiktok.com/@ksa_hack01\&quot;" target=\"_blank\" class=\"social-link bg-tiktok\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z\"/></svg>\n                        <span>تيك توك</span>\n                    </a>\n                    <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://twitter.com/ksa_hack2\&quot;" target=\"_blank\" class=\"social-link bg-twitter\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z\"/></svg>\n                        <span>تويتر</span>\n                    </a>\n                    <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://t.me/KSA_hack01\&quot;" target=\"_blank\" class=\"social-link bg-telegram\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z\"/></svg>\n                        <span>تيليجرام</span>\n                    </a>\n                    <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://github.com/elias0878\&quot;" target=\"_blank\" class=\"social-link bg-github\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12\"/></svg>\n                        <span>جيت هاب</span>\n                    </a>\n                </div>\n            </div>\n\n            <!-- Quick Links -->\n            <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://elias0878.github.io/Services/\&quot;" target=\"_blank\" class=\"quick-link\">\n                <div class=\"quick-icon blue\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z\"/><polyline points=\"14 2 14 8 20 8\"/></svg>\n                </div>\n                <div class=\"quick-content\">\n                    <div class=\"quick-title\">الخدمات والأسعار</div>\n                    <div class=\"quick-desc\">تعرف على خدماتنا</div>\n                </div>\n                <svg class=\"quick-arrow\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m15 18-6-6 6-6\"/></svg>\n            </a>\n            <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://elias0878.github.io/accounts/fast-work.html\&quot;" target=\"_blank\" class=\"quick-link urgent\">\n                <div class=\"quick-icon red\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg>\n                </div>\n                <div class=\"quick-content\">\n                    <div class=\"quick-title\" style=\"color: #991B1B;\">مكافحة الابتزاز</div>\n                    <div class=\"quick-desc\" style=\"color: #DC2626;\">خدمة عاجلة</div>\n                </div>\n                <svg class=\"quick-arrow\" style=\"color: #DC2626;\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m15 18-6-6 6-6\"/></svg>\n            </a>\n\n            <!-- Action Buttons -->\n            <div class=\"actions-grid\">\n                <button class=\"action-btn dark\" onclick=\"showToolsPage()\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z\"/></svg>\n                    الأدوات\n                </button>\n                <button class=\"action-btn blue\" onclick=\"openServiceModal()\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/></svg>\n                    اطلب خدمة\n                </button>\n            </div>\n\n            <div class=\"footer\">\n                © 2025 فريق ابونواف | جميع الحقوق محفوظة\n            </div>\n        </div>\n\n        <!-- Tools Page -->\n        <div id=\"toolsPage\" class=\"hidden\">\n            <div class=\"tools-header\">\n                <button class=\"back-btn\" onclick=\"showHomePage()\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m15 18-6-6 6-6\"/></svg>\n                </button>\n                <h2 class=\"tools-title\">أدوات أبو نواف</h2>\n            </div>\n            <div class=\"tools-list\">\n                <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://tiktrace-osint-vgjc.arcada.app\&quot;" target=\"_blank\" class=\"tool-item\">\n                    <div class=\"tool-icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg>\n                    </div>\n                    <div class=\"tool-content\">\n                        <div class=\"tool-name\">OSINT TIKTOK</div>\n                        <div class=\"tool-desc\">أداة استخبارات تيك توك</div>\n                    </div>\n                    <svg class=\"tool-arrow\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" x2=\"21\" y1=\"14\" y2=\"3\"/></svg>\n                </a>\n                <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://snaposint-0y2x.arcada.app\&quot;" target=\"_blank\" class=\"tool-item\">\n                    <div class=\"tool-icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10\"/></svg>\n                    </div>\n                    <div class=\"tool-content\">\n                        <div class=\"tool-name\">OSINT SNAP PRO</div>\n                        <div class=\"tool-desc\">أداة استخبارات سناب شات</div>\n                    </div>\n                    <svg class=\"tool-arrow\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" x2=\"21\" y1=\"14\" y2=\"3\"/></svg>\n                </a>\n                <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://x-osint-intelligence-coti.arcada.app\&quot;" target=\"_blank\" class=\"tool-item\">\n                    <div class=\"tool-icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z\"/></svg>\n                    </div>\n                    <div class=\"tool-content\">\n                        <div class=\"tool-name\">OSINT X.COM</div>\n                        <div class=\"tool-desc\">أداة استخبارات تويتر</div>\n                    </div>\n                    <svg class=\"tool-arrow\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" x2=\"21\" y1=\"14\" y2=\"3\"/></svg>\n                </a>\n                <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://abu-nawaf-diagnostic-iee6.arcada.app\&quot;" target=\"_blank\" class=\"tool-item\">\n                    <div class=\"tool-icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z\"/><polyline points=\"14 2 14 8 20 8\"/></svg>\n                    </div>\n                    <div class=\"tool-content\">\n                        <div class=\"tool-name\">نموذج الطلبات</div>\n                        <div class=\"tool-desc\">نموذج طلبات معتمد</div>\n                    </div>\n                    <svg class=\"tool-arrow\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" x2=\"21\" y1=\"14\" y2=\"3\"/></svg>\n                </a>\n                <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://zehef-osint-tool-iylf.arcada.app\&quot;" target=\"_blank\" class=\"tool-item\">\n                    <div class=\"tool-icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/></svg>\n                    </div>\n                    <div class=\"tool-content\">\n                        <div class=\"tool-name\">فحص الإيميلات</div>\n                        <div class=\"tool-desc\">فحص وتحليل الإيميلات</div>\n                    </div>\n                    <svg class=\"tool-arrow\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" x2=\"21\" y1=\"14\" y2=\"3\"/></svg>\n                </a>\n                <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://tweet-recovery-machine-o1p3.arcada.app/\&quot;" target=\"_blank\" class=\"tool-item\">\n                    <div class=\"tool-icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"/><path d=\"M3 5V19A9 3 0 0 0 21 19V5\"/><path d=\"M3 12A9 3 0 0 0 21 12\"/></svg>\n                    </div>\n                    <div class=\"tool-content\">\n                        <div class=\"tool-name\">استخراج التغريدات</div>\n                        <div class=\"tool-desc\">استعادة التغريدات المحذوفة</div>\n                    </div>\n                    <svg class=\"tool-arrow\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" x2=\"21\" y1=\"14\" y2=\"3\"/></svg>\n                </a>\n                <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://torrentscope-search-n5vz.arcada.app\&quot;" target=\"_blank\" class=\"tool-item\">\n                    <div class=\"tool-icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" x2=\"12\" y1=\"15\" y2=\"3\"/></svg>\n                    </div>\n                    <div class=\"tool-content\">\n                        <div class=\"tool-name\">بحث التورنت</div>\n                        <div class=\"tool-desc\">البحث والتحميل</div>\n                    </div>\n                    <svg class=\"tool-arrow\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" x2=\"21\" y1=\"14\" y2=\"3\"/></svg>\n                </a>\n            </div>\n        </div>\n    </main>\n\n    <!-- Bottom Bar -->\n    <div class=\"bottom-bar\">\n        <div class=\"bottom-content\">\n            <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://t.me/KSA_hack01\&quot;" target=\"_blank\" class=\"bottom-btn primary\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/></svg>\n                آراء العملاء\n            </a>\n            <button class=\"bottom-btn secondary\" onclick=\"openTermsModal()\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z\"/><polyline points=\"14 2 14 8 20 8\"/></svg>\n                الشروط\n            </button>\n            <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://abu-nawaf-services-wcfq.arcada.app/\&quot;" target=\"_blank\" class=\"bottom-btn secondary\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"2\" x2=\"22\" y1=\"12\" y2=\"12\"/><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"/></svg>\n                الموقع\n            </a>\n        </div>\n    </div>\n\n    <!-- Service Modal -->\n    <div class=\"modal-overlay\" id=\"serviceModal\">\n        <div class=\"modal\">\n            <div class=\"modal-header\">\n                <div class=\"modal-title\">اطلب خدمة</div>\n                <button class=\"modal-close\" onclick=\"closeServiceModal()\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/></svg>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <div class=\"modal-section\">\n                    <div class=\"modal-section-title\">التواصل مع الفريق</div>\n                    <div class=\"modal-social-grid\">\n                        <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://www.facebook.com/profile.php?id=61554330014413\&quot;" target=\"_blank\" class=\"modal-social-link bg-facebook\" onclick=\"incrementRequests()\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z\"/></svg>\n                            <span>فيسبوك</span>\n                        </a>\n                        <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://www.instagram.com/ksa_hack01\&quot;" target=\"_blank\" class=\"modal-social-link bg-instagram\" onclick=\"incrementRequests()\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect width=\"20\" height=\"20\" x=\"2\" y=\"2\" rx=\"5\"/><path d=\"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z\"/></svg>\n                            <span>انستجرام</span>\n                        </a>\n                        <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://www.snapchat.com/add/team_ant\&quot;" target=\"_blank\" class=\"modal-social-link bg-snapchat\" onclick=\"incrementRequests()\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12.17 4.17c-2.41 0-4.27 1.64-4.27 4.15 0 1.37.47 2.44.88 3.28.36.73.68 1.36.68 2.05 0 .87-.38 1.47-.93 1.47-.38 0-.65-.28-.65-.65 0-.4.27-.6.27-1.07 0-.53-.4-.93-.93-.93-.53 0-.93.4-.93.93 0 1.2.98 2.18 2.18 2.18 1.4 0 2.4-1.13 2.4-2.72 0-.93-.4-1.73-.8-2.53-.33-.67-.6-1.27-.6-1.93 0-1.13.73-1.87 1.87-1.87 1.07 0 1.8.67 1.8 1.67 0 .67-.33 1.2-.33 1.8 0 .6.4 1 .93 1 .53 0 .93-.4.93-1 0-.6-.33-1.13-.33-1.8 0-1 .73-1.67 1.8-1.67 1.13 0 1.87.73 1.87 1.87 0 .67-.27 1.27-.6 1.93-.4.8-.8 1.6-.8 2.53 0 1.6 1 2.72 2.4 2.72 1.2 0 2.18-.98 2.18-2.18 0-.53-.4-.93-.93-.93-.53 0-.93.4-.93.93 0 .47.27.67.27 1.07 0 .37-.27.65-.65.65-.55 0-.93-.6-.93-1.47 0-.67.33-1.33.68-2.05.4-.87.88-1.93.88-3.28 0-2.53-1.87-4.15-4.27-4.15z\"/></svg>\n                            <span>سناب</span>\n                        </a>\n                        <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://www.tiktok.com/@ksa_hack01\&quot;" target=\"_blank\" class=\"modal-social-link bg-tiktok\" onclick=\"incrementRequests()\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z\"/></svg>\n                            <span>تيك توك</span>\n                        </a>\n                        <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://twitter.com/ksa_hack2\&quot;" target=\"_blank\" class=\"modal-social-link bg-twitter\" onclick=\"incrementRequests()\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z\"/></svg>\n                            <span>تويتر</span>\n                        </a>\n                        <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://t.me/KSA_hack01\&quot;" target=\"_blank\" class=\"modal-social-link bg-telegram\" onclick=\"incrementRequests()\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z\"/></svg>\n                            <span>تيليجرام</span>\n                        </a>\n                        <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://github.com/elias0878\&quot;" target=\"_blank\" class=\"modal-social-link bg-github\" onclick=\"incrementRequests()\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12\"/></svg>\n                            <span>جيت هاب</span>\n                        </a>\n                    </div>\n                </div>\n                <a href="https://abu-nawaf-be6o.arcada.app/\&quot;https://abu-nawaf-diagnostic-iee6.arcada.app\&quot;" target=\"_blank\" class=\"smart-request-btn\" onclick=\"incrementRequests()\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 8V4H8\"/><rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\"/><path d=\"M2 14h2\"/><path d=\"M20 14h2\"/><path d=\"M15 13v2\"/><path d=\"M9 13v2\"/></svg>\n                    <div class=\"smart-request-content\">\n                        <div class=\"smart-request-title\">أداة الطلب الذكي</div>\n                        <div class=\"smart-request-desc\">أرسل طلبك بسهولة</div>\n                    </div>\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:16px;height:16px;\"><path d=\"m15 18-6-6 6-6\"/></svg>\n                </a>\n            </div>\n        </div>\n    </div>\n\n    <!-- Terms Modal -->\n    <div class=\"modal-overlay\" id=\"termsModal\">\n        <div class=\"modal\">\n            <div class=\"modal-header\">\n                <div class=\"modal-title\">الشروط والخطوات</div>\n                <button class=\"modal-close\" onclick=\"closeTermsModal()\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/></svg>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <div class=\"terms-section blue\">\n                    <div class=\"terms-section-title\">البنود الأساسية</div>\n                    <ul class=\"terms-list\">\n                        <li>\n                            <svg class=\"check\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"/><polyline points=\"22 4 12 14.01 9 11.01\"/></svg>\n                            <span>بدء العمل بعد موافقتك على التقرير</span>\n                        </li>\n                        <li>\n                            <svg class=\"warning\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg>\n                            <span>بعد البدء لا يمكن التراجع أو الاسترداد</span>\n                        </li>\n                        <li>\n                            <svg class=\"info\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 16v-4\"/><path d=\"M12 8h.01\"/></svg>\n                            <span>إما خصم أو تقسيط - لا يجمعان</span>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"terms-section green\">\n                    <div class=\"terms-section-title\">خطة العمل</div>\n                    <ol class=\"steps-list\">\n                        <li><span class=\"step-number\">1</span>استقبال الأهداف</li>\n                        <li><span class=\"step-number\">2</span>جمع المعلومات</li>\n                        <li><span class=\"step-number\">3</span>التقييم والحلول</li>\n                        <li><span class=\"step-number\">4</span>التقرير التفصيلي</li>\n                        <li><span class=\"step-number\">5</span>بدء التنفيذ</li>\n                        <li><span class=\"step-number\">6</span>استعراض النتائج</li>\n                    </ol>\n                </div>\n                <div class=\"terms-section red\">\n                    <div class=\"terms-section-title\">ملاحظة هامة</div>\n                    <p style=\"font-size:13px;\">العملاء الجدد: ضمان بسيط أو دفع 50% أثناء العمل.</p>\n                </div>\n            </div>\n            <div class=\"modal-footer\">\n                <button class=\"modal-footer-btn\" onclick=\"closeTermsModal()\">فهمت</button>\n            </div>\n        </div>\n    </div>\n\n    <script>\n        // Check Work Status\n        function checkWorkStatus() {\n            const now = new Date();\n            const hour = now.getHours() + (now.getMinutes() / 60);\n            const day = now.getDay();\n            const isFriday = day === 5;\n            const isWorkingHours = (hour >= 14.5 && hour < 24) || (hour >= 0 && hour < 0.5);\n            const status = document.getElementById('status');\n            const statusText = document.getElementById('statusText');\n            \n            if (isFriday || !isWorkingHours) {\n                status.classList.remove('online');\n                status.classList.add('offline');\n                statusText.textContent = 'مغلق';\n            } else {\n                status.classList.remove('offline');\n                status.classList.add('online');\n                statusText.textContent = 'متاح';\n            }\n        }\n        \n        // Stats Functions\n        function getTodayKey() {\n            return 'stats_' + new Date().toISOString().split('T')[0];\n        }\n        \n        function getStats() {\n            const key = getTodayKey();\n            const data = localStorage.getItem(key);\n            return data ? JSON.parse(data) : { visits: 0, requests: 0 };\n        }\n        \n        function saveStats(stats) {\n            const key = getTodayKey();\n            localStorage.setItem(key, JSON.stringify(stats));\n        }\n        \n        function updateDisplay() {\n            const stats = getStats();\n            document.getElementById('visitCount').textContent = stats.visits.toLocaleString('ar-SA');\n            document.getElementById('requestCount').textContent = stats.requests.toLocaleString('ar-SA');\n        }\n        \n        function incrementVisits() {\n            const stats = getStats();\n            stats.visits++;\n            saveStats(stats);\n            updateDisplay();\n        }\n        \n        function incrementRequests() {\n            const stats = getStats();\n            stats.requests++;\n            saveStats(stats);\n            updateDisplay();\n        }\n        \n        // Page Navigation\n        function showToolsPage() {\n            document.getElementById('homePage').classList.add('hidden');\n            document.getElementById('toolsPage').classList.remove('hidden');\n        }\n        \n        function showHomePage() {\n            document.getElementById('toolsPage').classList.add('hidden');\n            document.getElementById('homePage').classList.remove('hidden');\n        }\n        \n        // Modals\n        function openServiceModal() {\n            document.getElementById('serviceModal').classList.add('active');\n        }\n        \n        function closeServiceModal() {\n            document.getElementById('serviceModal').classList.remove('active');\n        }\n        \n        function openTermsModal() {\n            document.getElementById('termsModal').classList.add('active');\n        }\n        \n        function closeTermsModal() {\n            document.getElementById('termsModal').classList.remove('active');\n        }\n        \n        // Close modals on overlay click\n        document.getElementById('serviceModal').addEventListener('click', function(e) {\n            if (e.target === this) closeServiceModal();\n        });\n        \n        document.getElementById('termsModal').addEventListener('click', function(e) {\n            if (e.target === this) closeTermsModal();\n        });\n        \n        // Initialize\n        checkWorkStatus();\n        updateDisplay();\n        incrementVisits();\n        \n        // Update status every minute\n        setInterval(checkWorkStatus, 60000);\n    </script>\n</body>\n</html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>أبو نواف | هكر أخلاقي — استعادة الحسابات وتأمينها في السعودية</title>
+<meta name="description" content="فريق أبو نواف للتقنية والخدمات الأمنية: استعادة الحسابات المخترقة، تأمين الحسابات، مكافحة الابتزاز، فحص الثغرات، والتحقيقات الرقمية — الرياض، السعودية.">
+<meta name="theme-color" content="#070b14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="أبو نواف | هكر أخلاقي — استعادة وتأمين الحسابات">
+<meta property="og:description" content="استعادة حسابات مخترقة، تأمين شامل، مكافحة ابتزاز، فحص ثغرات، وتحقيقات رقمية. فريق سعودي متخصص.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="assets/abunawaf/icon-180.png">
+<style>
+  @font-face{font-family:'TajawalX';font-weight:400;font-display:swap;src:url('assets/abunawaf/fonts/tajawal-400-arabic.woff2') format('woff2')}
+  @font-face{font-family:'TajawalX';font-weight:500;font-display:swap;src:url('assets/abunawaf/fonts/tajawal-500-arabic.woff2') format('woff2')}
+  @font-face{font-family:'TajawalX';font-weight:700;font-display:swap;src:url('assets/abunawaf/fonts/tajawal-700-arabic.woff2') format('woff2')}
+  @font-face{font-family:'TajawalX';font-weight:800;font-display:swap;src:url('assets/abunawaf/fonts/tajawal-800-arabic.woff2') format('woff2')}
+  :root{
+    --bg:#05080f;--bg2:#08101c;--panel:#0b1421;--panel2:#0f1b2c;--line:rgba(148,197,222,.14);
+    --teal:#22d3ee;--teal2:#34d399;--gold:#f5c451;--ink:#eaf3fa;--muted:#8ba4b9;--danger:#fb7185;
+    --radius:18px;--font:'TajawalX','Tajawal',system-ui,'Segoe UI',Tahoma,sans-serif;
+    --shadow:0 24px 70px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{background:
+      radial-gradient(1200px 600px at 88% -12%,rgba(34,211,238,.10),transparent 60%),
+      radial-gradient(900px 500px at 6% 8%,rgba(245,196,81,.06),transparent 55%),
+      radial-gradient(1000px 600px at 50% 120%,rgba(52,211,153,.07),transparent 60%),
+      var(--bg);
+    color:var(--ink);font-family:var(--font);line-height:1.75;min-height:100vh;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font-family:inherit;cursor:pointer}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .grad{background:linear-gradient(90deg,var(--teal2),var(--teal) 50%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(34,211,238,.06);color:#bfeafe;font-size:12px;font-weight:700}
+
+  /* header */
+  .site-head{position:sticky;top:0;z-index:70;backdrop-filter:blur(16px) saturate(150%);background:rgba(5,8,15,.72);border-bottom:1px solid var(--line)}
+  .site-head .in{display:flex;align-items:center;gap:14px;padding:11px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+  .brand img{width:34px;height:34px;filter:drop-shadow(0 0 12px rgba(34,211,238,.35))}
+  .brand small{display:block;font-size:10.5px;color:var(--muted);font-weight:600;line-height:1.2}
+  .nav{display:flex;gap:4px;margin-inline-start:20px}
+  .nav a{padding:7px 12px;border-radius:10px;font-size:12.5px;font-weight:700;color:#c6d9e8;transition:.16s}
+  .nav a:hover{background:rgba(34,211,238,.1);color:#fff}
+  .head-actions{margin-inline-start:auto;display:flex;gap:8px;align-items:center}
+  .status{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#9df5cf;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid rgba(52,211,153,.3);background:rgba(52,211,153,.08)}
+  .status i{width:7px;height:7px;border-radius:50%;background:var(--teal2);box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.55)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:13px;border:1px solid transparent;font-weight:800;font-size:13.5px;transition:.18s;white-space:nowrap}
+  .btn-primary{background:linear-gradient(135deg,#12b4c9,#0a8ea3);color:#02131b;box-shadow:0 12px 30px rgba(34,211,238,.22)}
+  .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.07)}
+  .btn-gold{background:linear-gradient(135deg,#f7d67e,#e8b83f);color:#221a06;box-shadow:0 12px 30px rgba(245,196,81,.2)}
+  .btn-gold:hover{transform:translateY(-2px);filter:brightness(1.05)}
+  .btn-ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:rgba(34,211,238,.45);background:rgba(34,211,238,.09)}
+  .btn-sm{padding:9px 14px;font-size:12px;border-radius:11px}
+
+  /* hero */
+  .hero{position:relative;padding:clamp(40px,7vw,84px) 0 30px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  h1{font-size:clamp(30px,5.2vw,52px);line-height:1.18;font-weight:800;letter-spacing:-1px;margin:16px 0 16px}
+  .lead{font-size:clamp(14px,1.7vw,16.5px);color:#a9c1d3;max-width:56ch}
+  .hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;font-size:12px;color:var(--muted)}
+  .trust b{color:#dcecf7}
+  .trust span{display:flex;align-items:center;gap:6px}
+  .hero-card{position:relative;padding:26px;border-radius:26px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.015));box-shadow:var(--shadow);backdrop-filter:blur(10px)}
+  .hero-card:before{content:'';position:absolute;inset:-1px;border-radius:26px;padding:1px;background:linear-gradient(135deg,rgba(34,211,238,.5),transparent 40%,rgba(245,196,81,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+  .hero-card .avatar{width:96px;height:96px;border-radius:26px;overflow:hidden;border:1px solid rgba(34,211,238,.35);box-shadow:0 18px 40px rgba(0,0,0,.45);margin-bottom:16px}
+  .hero-card h3{font-size:20px;margin-bottom:2px}
+  .hero-card .role{font-size:12px;color:var(--teal);font-weight:700}
+  .hero-card p{font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.9}
+  .quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+  .quick div{padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.25);font-size:11px;color:var(--muted)}
+  .quick b{display:block;color:#fff;font-size:13px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+  .chip{padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:11px;color:#c9dded}
+
+  /* stats strip */
+  .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:34px 0 10px}
+  .strip div{padding:16px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.012));text-align:center}
+  .strip b{display:block;font-size:22px;color:#fff;letter-spacing:-.5px}
+  .strip span{font-size:11px;color:var(--muted)}
+
+  /* sections */
+  section{padding:clamp(38px,6vw,64px) 0}
+  .sec-head{text-align:center;max-width:70ch;margin:0 auto 34px}
+  .sec-head h2{font-size:clamp(22px,3.4vw,34px);font-weight:800;letter-spacing:-.6px;margin:12px 0 10px}
+  .sec-head p{color:var(--muted);font-size:14px}
+
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px}
+  .svc{position:relative;padding:22px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01));transition:.2s;overflow:hidden}
+  .svc:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.42);box-shadow:0 22px 50px rgba(0,0,0,.45)}
+  .svc .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:21px;background:radial-gradient(circle at 30% 25%,#143b53,#0a1420 78%);border:1px solid rgba(34,211,238,.3);margin-bottom:14px}
+  .svc h3{font-size:16px;margin-bottom:6px}
+  .svc p{font-size:12.5px;color:var(--muted);min-height:44px}
+  .svc ul{list-style:none;display:grid;gap:6px;margin:14px 0 16px;font-size:11.5px;color:#b9d0e0}
+  .svc li{display:flex;gap:7px;align-items:flex-start}
+  .svc li:before{content:'✓';color:var(--teal2);font-weight:800}
+  .svc .price{display:flex;align-items:baseline;gap:6px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+  .svc .price b{font-size:19px;color:var(--gold);letter-spacing:-.3px}
+  .svc .tag{position:absolute;top:14px;inset-inline-end:14px;padding:3px 9px;border-radius:999px;font-size:9.5px;font-weight:800;background:rgba(245,196,81,.13);border:1px solid rgba(245,196,81,.35);color:var(--gold)}
+  .svc.critical{border-color:rgba(251,113,133,.32)}
+  .svc.critical .tag{background:rgba(251,113,133,.14);border-color:rgba(251,113,133,.4);color:#ffb3c0}
+
+  /* steps */
+  .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+  .step{position:relative;padding:20px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.022)}
+  .step b{position:absolute;top:-12px;inset-inline-start:18px;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,#12b4c9,#0a8ea3);color:#02131b;font-size:12.5px;font-weight:800;box-shadow:0 8px 20px rgba(34,211,238,.25)}
+  .step h4{margin:12px 0 5px;font-size:13.5px}
+  .step p{font-size:11.5px;color:var(--muted)}
+
+  /* form */
+  .intake{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:start}
+  .intake-side{padding:26px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.012))}
+  .intake-side h3{font-size:19px;margin-bottom:8px}
+  .intake-side p{font-size:12.5px;color:var(--muted);line-height:1.9}
+  .intake-side .note{margin-top:16px;padding:12px 14px;border-radius:12px;border:1px solid rgba(245,196,81,.28);background:rgba(245,196,81,.06);font-size:11.5px;color:#f1ddaa;line-height:1.8}
+  form.card{padding:26px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));box-shadow:var(--shadow)}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+  .field{display:grid;gap:5px}
+  .field.full{grid-column:1/-1}
+  label{font-size:11px;font-weight:700;color:var(--muted)}
+  input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,13,.66);color:var(--ink);font:500 13px var(--font);outline:none;transition:.15s}
+  input:focus,select:focus,textarea:focus{border-color:rgba(34,211,238,.55);box-shadow:0 0 0 4px rgba(34,211,238,.1)}
+  textarea{min-height:110px;resize:vertical}
+  .err{color:#ff9aac;font-size:11px;min-height:14px}
+  .ok-box{padding:14px;border-radius:13px;border:1px solid rgba(52,211,153,.4);background:rgba(52,211,153,.08);font-size:12.5px;color:#b7f7da;display:none}
+  .ok-box.show{display:block}
+
+  /* faq */
+  details{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.022);padding:14px 18px;margin-bottom:9px;transition:.15s}
+  details[open]{border-color:rgba(34,211,238,.32);background:rgba(34,211,238,.045)}
+  summary{cursor:pointer;font-weight:700;font-size:13px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:'+';color:var(--teal);font-weight:800}
+  details[open] summary:after{content:'−'}
+  details p{margin-top:10px;font-size:12.5px;color:var(--muted);line-height:1.9}
+
+  /* contact */
+  .contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+  .cc{padding:18px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.025);transition:.18s;display:flex;gap:12px;align-items:center}
+  .cc:hover{transform:translateY(-3px);border-color:rgba(34,211,238,.4);background:rgba(34,211,238,.07)}
+  .cc .ci{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.28);font-size:17px}
+  .cc b{display:block;font-size:12.5px}
+  .cc span{font-size:10.5px;color:var(--muted);direction:ltr;display:block;text-align:start}
+
+  footer{border-top:1px solid var(--line);padding:34px 0 26px;margin-top:20px;background:linear-gradient(180deg,transparent,rgba(34,211,238,.04))}
+  .foot{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;font-size:11.5px;color:var(--muted)}
+  .foot a:hover{color:var(--teal)}
+  .fab-call{position:fixed;inset-inline-start:16px;bottom:16px;z-index:65;display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:999px;background:linear-gradient(135deg,#25d366,#128c4a);color:#04220f;font-weight:800;font-size:12.5px;box-shadow:0 14px 34px rgba(37,211,102,.3);transition:.2s}
+  .fab-call:hover{transform:translateY(-3px)}
+  .modal{position:fixed;inset:0;z-index:120;display:none;place-items:center;padding:16px;background:rgba(3,6,11,.78);backdrop-filter:blur(6px)}
+  .modal.open{display:grid}
+  .modal-box{max-width:640px;width:100%;max-height:86vh;overflow:auto;padding:26px;border-radius:22px;border:1px solid var(--line);background:var(--panel2);box-shadow:var(--shadow)}
+  .modal-box h3{margin-bottom:12px;font-size:18px}
+  .modal-box ol{margin-inline-start:18px;display:grid;gap:8px;font-size:12.5px;color:#c2d6e5}
+  .modal-box p{font-size:12.5px;color:var(--muted);margin-top:12px}
+
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:26px}.intake{grid-template-columns:1fr}.nav{display:none}}
+  @media(max-width:520px){.frow{grid-template-columns:1fr}.head-actions .status{display:none}}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap in">
+    <a class="brand" href="#top" aria-label="أبو نواف — الصفحة الرئيسية">
+      <img src="assets/abunawaf/logo.svg" alt="شعار أبو نواف">
+      <span>أبو نواف<small>هكر أخلاقي · أمن سيبراني</small></span>
+    </a>
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <a href="#services">الخدمات</a>
+      <a href="#process">طريقة العمل</a>
+      <a href="#tools">الأدوات</a>
+      <a href="#request">طلب خدمة</a>
+      <a href="#faq">الأسئلة</a>
+    </nav>
+    <div class="head-actions">
+      <span class="status"><i></i> متاحون الآن</span>
+      <a class="btn btn-primary btn-sm" href="#request">اطلب خدمة</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">🛡️ فريق سعودي متخصص · منذ 2021</span>
+        <h1>استعد حسابك المخترق و<span class="grad">أمّن رقمك الرقمي</span> باحترافية</h1>
+        <p class="lead">فريق أبو نواف يقدّم خدمات الأمن السيبراني للمنشآت والأفراد: استعادة الحسابات المخترقة، مكافحة الابتزاز الإلكتروني، تأمين الحسابات بمصادقة ثنائية وإدارة كلمات مرور، وفحص الثغرات — بمنهجية أخلاقية موثّقة وخصوصية تامة.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#request">اطلب تشخيصًا مجانيًا</a>
+          <a class="btn btn-ghost" href="#services">تصفّح الخدمات والأسعار</a>
+        </div>
+        <div class="trust">
+          <span>✓ <b>استجابة</b> خلال 24 ساعة</span>
+          <span>✓ <b>خصوصية</b> تامة للبيانات</span>
+          <span>✓ <b>تقرير</b> مُوثّق لكل حالة</span>
+          <span>✓ <b>دعم</b> بعد الاستعادة</span>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="avatar"><img src="assets/abunawaf/icon-256.png" alt="شعار فريق أبو نواف"></div>
+        <h3>أبو نواف <span style="font-size:12px;color:var(--muted);font-weight:600">(الياس)</span></h3>
+        <div class="role">Founder · Ethical Hacker · Security Researcher</div>
+        <p>متخصص في الاستجابة للحوادث الرقمية، استعادة الحسابات، والتحقيقات المفتوحة (OSINT). أبني أدوات مفتوحة المصدر يستخدمها الباحثون الأمنيون يوميًا.</p>
+        <div class="quick">
+          <div><b>الرياض</b>حي الربيع</div>
+          <div><b>2:30م — 12:00ص</b>الجمعة إجازة</div>
+        </div>
+        <div class="chips">
+          <span class="chip">استعادة حسابات</span><span class="chip">مكافحة ابتزاز</span><span class="chip">اختبار اختراق</span><span class="chip">OSINT</span>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+      <div class="strip">
+        <div><b id="c-services">8</b><span>خدمة متخصصة</span></div>
+        <div><b>24س</b><span>متوسط الاستجابة</span></div>
+        <div><b>30+</b><span>أداة مفتوحة</span></div>
+        <div><b>100%</b><span>سريّة وخصوصية</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">الخدمات</span>
+        <h2>حلول أمنية <span class="grad">من أول مكالمة حتى الإغلاق</span></h2>
+        <p>كل خدمة تبدأ بتشخيص مجاني وتنتهي بتقرير موثّق — بدون مفاجآت في السعر أو النطاق.</p>
+      </div>
+      <div class="services" id="svc-grid">
+        <article class="svc">
+          <span class="tag">الأكثر طلبًا</span>
+          <div class="ico">🔐</div>
+          <h3>استعادة الحسابات المخترقة</h3>
+          <p>استعادة حسابات فيسبوك، انستغرام، تويتر/X، سناب وتيك توك المسروقة.</p>
+          <ul><li>تحليل سجل الاختراق</li><li>استعادة كاملة للحساب</li><li>تأمين بعد الاستعادة</li></ul>
+          <div class="price">يبدأ من <b>500</b> ريال</div>
+        </article>
+        <article class="svc">
+          <div class="ico">🛡️</div>
+          <h3>تأمين الحسابات</h3>
+          <p>حماية شاملة لحساباتك الرقمية ضد الاختراق والتصيّد.</p>
+          <ul><li>مصادقة ثنائية</li><li>مدير كلمات مرور</li><li>فحص أمني شامل</li></ul>
+          <div class="price">يبدأ من <b>300</b> ريال</div>
+        </article>
+        <article class="svc critical">
+          <span class="tag">عاجل</span>
+          <div class="ico">⚔️</div>
+          <h3>مكافحة الابتزاز الإلكتروني</h3>
+          <p>خطة استجابة فورية للتهديدات والابتزاز وحماية السمعة.</p>
+          <ul><li>تحليل التهديد</li><li>خطة حماية</li><li>متابعة قانونية</li></ul>
+          <div class="price">يبدأ من <b>800</b> ريال</div>
+        </article>
+        <article class="svc">
+          <div class="ico">🔍</div>
+          <h3>فحص الثغرات واختبار الاختراق</h3>
+          <p>فحص مواقعك وأنظمتك وفق منهجية OWASP وتقرير قابل للتنفيذ.</p>
+          <ul><li>فحص OWASP</li><li>تقرير مفصّل</li><li>خطة إصلاح</li></ul>
+          <div class="price">يبدأ من <b>1000</b> ريال</div>
+        </article>
+        <article class="svc">
+          <div class="ico">🦠</div>
+          <h3>تحليل البرمجيات الخبيثة</h3>
+          <p>فحص الملفات والروابط المشبوهة وتحديد مؤشرات الاختراق.</p>
+          <ul><li>تحليل عميق</li><li>تقرير IOC</li><li>خطوات العلاج</li></ul>
+          <div class="price">يبدأ من <b>400</b> ريال</div>
+        </article>
+        <article class="svc">
+          <div class="ico">🕵️</div>
+          <h3>OSINT والتحقيقات الرقمية</h3>
+          <p>جمع وتحليل المعلومات من المصادر المفتوحة لتوثيق الحوادث.</p>
+          <ul><li>بحث عميق</li><li>تقرير أدلة</li><li>تحليل بيانات</li></ul>
+          <div class="price">يبدأ من <b>600</b> ريال</div>
+        </article>
+        <article class="svc">
+          <div class="ico">💡</div>
+          <h3>استشارات أمنية</h3>
+          <p>جلسة متخصصة لمراجعة وضعك الأمني وخطة الحماية.</p>
+          <ul><li>جلسة متخصصة</li><li>خطة أمنية</li><li>متابعة</li></ul>
+          <div class="price">يبدأ من <b>200</b> ريال</div>
+        </article>
+        <article class="svc">
+          <div class="ico">🌐</div>
+          <h3>تطوير مواقع آمنة</h3>
+          <p>بناء مواقع حديثة مع حماية من الثغرات الشائعة وSSLM.</p>
+          <ul><li>تصميم حديث</li><li>حماية WAF</li><li>شهادة SSL</li></ul>
+          <div class="price">يبدأ من <b>2000</b> ريال</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">طريقة العمل</span>
+        <h2>خمس مراحل <span class="grad">واضحة وموثّقة</span></h2>
+        <p>لا تدفع كامل المبلغ قبل رؤية التقرير والموافقة على خطة العمل.</p>
+      </div>
+      <div class="flow">
+        <div class="step"><b>1</b><h4>استقبال الطلب</h4><p>تعبئة النموذج أو التواصل المباشر مع وصف المشكلة.</p></div>
+        <div class="step"><b>2</b><h4>التشخيص المجاني</h4><p>تحليل أولي للحالة وتحديد النطاق والجدوى.</p></div>
+        <div class="step"><b>3</b><h4>التقرير والعرض</h4><p>تقرير مفصّل بالخطة والسعر قبل البدء.</p></div>
+        <div class="step"><b>4</b><h4>التنفيذ</h4><p>بدء العمل بعد الموافقة — دفعة 50% للعملاء الجدد.</p></div>
+        <div class="step"><b>5</b><h4>التسليم والتأمين</h4><p>النتائج + خطوات التأمين لمنع التكرار.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST -->
+  <section id="request">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">طلب خدمة</span>
+        <h2>ابدأ الآن بـ <span class="grad">تشخيص مجاني</span></h2>
+        <p>أرسل التفاصيل — سيتواصل معك فريقنا خلال 24 ساعة عمل. بياناتك تُستخدم لخدمتك فقط.</p>
+      </div>
+      <div class="intake">
+        <div class="intake-side">
+          <h3>ماذا يحدث بعد الإرسال؟</h3>
+          <p>يصل طلبك إلى لوحة الفريق مباشرة. سنراجع الحالة ونطلب أي توضيحات إضافية، ثم نرسل تقريرًا أوليًا بنطاق العمل والسعر المتوقع.</p>
+          <div class="note">🔒 لا نطلب كلمات المرور أبدًا. لا تُشارك بيانات دخول حساباتك في أي مرحلة من النموذج. مكافحة الابتزاز تُعامَل كحالة عاجلة.</div>
+          <div style="margin-top:16px" class="chips">
+            <span class="chip">✓ رد خلال 24 ساعة</span><span class="chip">✓ تشخيص مجاني</span><span class="chip">✓ سريّة تامة</span>
+          </div>
+        </div>
+        <form class="card" id="intake" novalidate>
+          <div class="ok-box" id="ok-box" role="status"></div>
+          <div class="frow">
+            <div class="field"><label for="f-name">الاسم</label><input id="f-name" name="name" required autocomplete="name" placeholder="اسمك الكامل"></div>
+            <div class="field"><label for="f-phone">رقم الجوال / واتساب</label><input id="f-phone" name="phone" inputmode="tel" placeholder="05xxxxxxxx"></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="f-email">البريد الإلكتروني</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+            <div class="field"><label for="f-service">نوع الخدمة</label>
+              <select id="f-service" name="service">
+                <option>استعادة حساب مخترق</option><option>تأمين حسابات</option><option>مكافحة ابتزاز</option>
+                <option>فحص ثغرات / اختبار اختراق</option><option>تحليل برمجيات خبيثة</option><option>تحقيقات OSINT</option>
+                <option>استشارة أمنية</option><option>تطوير موقع آمن</option><option>أخرى</option>
+              </select>
+            </div>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="f-platform">المنصة (إن وجدت)</label><input id="f-platform" name="platform" placeholder="فيسبوك / انستغرام / X …"></div>
+            <div class="field"><label for="f-budget">الميزانية التقريبية</label>
+              <select id="f-budget" name="budget"><option>غير محددة</option><option>أقل من 500 ريال</option><option>500 – 1000 ريال</option><option>1000 – 2000 ريال</option><option>أكثر من 2000 ريال</option></select>
+            </div>
+          </div>
+          <div class="field full" style="margin-bottom:12px">
+            <label for="f-msg">وصف المشكلة *</label>
+            <textarea id="f-msg" name="message" required placeholder="اشرح ما حدث: متى لاحظت الاختراق؟ هل تم تغيير البريد أو كلمة المرور؟ هل هناك تهديدات أو طلبات مالية؟"></textarea>
+            <div class="err" id="err"></div>
+          </div>
+          <label style="display:flex;gap:8px;align-items:flex-start;font-size:11px;color:var(--muted);margin-bottom:14px">
+            <input type="checkbox" id="f-consent" style="width:auto;margin-top:3px" required>
+            <span>أوافق على سياسة الخصوصية والشروط: لا يمكن التراجع بعد بدء العمل، وبياناتي تُستخدم لتنفيذ الخدمة فقط.</span>
+          </label>
+          <button class="btn btn-primary" type="submit" id="send" style="width:100%">إرسال الطلب</button>
+          <p style="font-size:10.5px;color:var(--muted);margin-top:10px;text-align:center">أو تواصل مباشرة عبر واتساب من الزر أسفل الصفحة</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section id="tools">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">أدوات مفتوحة</span>
+        <h2>مكتبة أدوات <span class="grad">مجانية ومفتوحة المصدر</span></h2>
+        <p>ثلاثون أداة استخبارات وأمن سيبراني بُنيت داخليًا ومتاحة للجميع بلا تسجيل.</p>
+      </div>
+      <div class="services">
+        <a class="svc" href="https://abu-nawaf-hub.vercel.app" target="_blank" rel="noopener noreferrer"><div class="ico">🧰</div><h3>مركز الأدوات</h3><p>كل الأدوات في واجهة واحدة مع بحث وتصنيف.</p><ul><li>٣٠ أداة</li><li>بحث فوري</li></ul></a>
+        <a class="svc" href="https://zehef-email-osint.vercel.app" target="_blank" rel="noopener noreferrer"><div class="ico">✉️</div><h3>Zehef</h3><p>استخبارات البريد الإلكتروني وكشف التسريبات.</p><ul><li>Hudson Rock</li><li>Gravatar</li></ul></a>
+        <a class="svc" href="https://x-osint-intelligence.vercel.app" target="_blank" rel="noopener noreferrer"><div class="ico">𝕏</div><h3>X-OSINT</h3><p>تحليل عميق لحسابات X.com وبحث عبر المنصات.</p><ul><li>18 منصة</li><li>تغريدات محذوفة</li></ul></a>
+        <a class="svc" href="https://miswar-image-search.vercel.app" target="_blank" rel="noopener noreferrer"><div class="ico">🖼️</div><h3>مِصوَر</h3><p>بحث وتحميل الصور من مصادر المحتوى المفتوح.</p><ul><li>4 مصادر</li><li>تصدير ZIP</li></ul></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">الأسئلة الشائعة</span><h2>أسئلة <span class="grad">يسألها الجميع</span></h2></div>
+      <div style="max-width:820px;margin:0 auto">
+        <details open><summary>هل الخدمة قانونية؟</summary><p>نعم. نعمل ضمن نطاق الأمن السيبراني الأخلاقي وبموافقة العميل وملكيته للحساب أو النظام. لا نقبل أي حالة تخص حسابًا لا يملكه مقدم الطلب.</p></details>
+        <details><summary>كم تستغرق استعادة الحساب؟</summary><p>تختلف حسب المنصة وطبيعة الاختراق: من 24 ساعة في الحالات البسيطة إلى عدة أيام في الحالات المعقّدة مع تغيير البريد وكلمة المرور.</p></details>
+        <details><summary>هل تُطلب كلمة المرور الخاصة بي؟</summary><p>لا. نطلب فقط معلومات ملكية الحساب للتحقق (مثل بريد الاسترداد القديم أو نشاط سابق)، ولا نطلب كلمات مرور.</p></details>
+        <details><summary>ماذا لو فشلت الاستعادة؟</summary><p>نوضح الاحتمالات بوضوح في التقرير الأولي قبل الدفع. في الحالات غير القابلة للاستعادة، نُبلّغك مسبقًا ونقترح بدائل مثل تأمين البديل وتوثيق البلاغ.</p></details>
+        <details><summary>كيف يتم الدفع؟</summary><p>عرض سعر مكتوب بعد التشخيص، ثم دفعة 50% أثناء العمل والباقي عند التسليم. لا تراجع بعد بدء التنفيذ.</p></details>
+        <details><summary>هل بياناتي آمنة؟</summary><p>تُستخدم بياناتك لتنفيذ الخدمة فقط وتُحذف بعد إغلاق الحالة عند طلبك. لا مشاركة مع أي طرف ثالث.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">تواصل</span><h2>نحن <span class="grad">قريبون منك</span></h2></div>
+      <div class="contact">
+        <a class="cc" href="https://wa.me/966500000000" target="_blank" rel="noopener noreferrer"><span class="ci">💬</span><span><b>واتساب</b><span>تواصل مباشر وسريع</span></span></a>
+        <a class="cc" href="https://t.me/KSA_hack01" target="_blank" rel="noopener noreferrer"><span class="ci">✈️</span><span><b>تيليجرام</b><span>@KSA_hack01</span></span></a>
+        <a class="cc" href="https://x.com/ksa_hack2" target="_blank" rel="noopener noreferrer"><span class="ci">𝕏</span><span><b>X (تويتر)</b><span>@ksa_hack2</span></span></a>
+        <a class="cc" href="https://www.instagram.com/ksa_hack01" target="_blank" rel="noopener noreferrer"><span class="ci">📸</span><span><b>انستغرام</b><span>@ksa_hack01</span></span></a>
+        <a class="cc" href="https://www.snapchat.com/add/team_ant" target="_blank" rel="noopener noreferrer"><span class="ci">👻</span><span><b>سناب شات</b><span>team_ant</span></span></a>
+        <a class="cc" href="https://www.tiktok.com/@ksa_hack01" target="_blank" rel="noopener noreferrer"><span class="ci">🎵</span><span><b>تيك توك</b><span>@ksa_hack01</span></span></a>
+        <a class="cc" href="https://github.com/abunoafceh8-commits" target="_blank" rel="noopener noreferrer"><span class="ci">⌨️</span><span><b>GitHub</b><span>abunoafceh8-commits</span></span></a>
+        <a class="cc" href="mailto:abunoaf.ceh8@gmail.com"><span class="ci">✉️</span><span><b>البريد</b><span>abunoaf.ceh8@gmail.com</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <b style="color:var(--ink)">© <span id="y">2026</span> فريق أبو نواف</b> — جميع الحقوق محفوظة · <a href="#" id="terms-link">الشروط والأحكام</a>
+    </div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a href="#services">الخدمات</a><a href="#request">طلب خدمة</a><a href="https://abu-nawaf-hub.vercel.app" target="_blank" rel="noopener noreferrer">الأدوات</a><a href="#faq">الأسئلة</a>
+    </div>
+  </div>
+</footer>
+
+<a class="fab-call" href="https://wa.me/966500000000" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب">💬 اطلب الآن</a>
+
+<div class="modal" id="terms" role="dialog" aria-modal="true" aria-label="الشروط والأحكام">
+  <div class="modal-box">
+    <h3>الشروط والأحكام</h3>
+    <ol>
+      <li>بدء العمل بعد موافقتك على التقرير والعرض المكتوب.</li>
+      <li>بعد بدء التنفيذ لا يمكن التراجع أو استرداد المبلغ.</li>
+      <li>إما خصم أو تقسيط — لا يُجمعان معًا.</li>
+      <li>العملاء الجدد: ضمان بسيط أو دفع 50% أثناء العمل.</li>
+      <li>يُمنع طلب خدمة على حساب لا تملكه، ويُرفض الطلب فورًا.</li>
+      <li>لا نطلب كلمات مرورك، ولا نتحمّل مسؤولية مشاركتك لها مع أي طرف.</li>
+    </ol>
+    <p>بالمتابعة أنت توافق على هذه الشروط وعلى سياسة الخصوصية: تُستخدم بياناتك لتنفيذ الخدمة فقط، وتُحذف عند طلبك بعد إغلاق الحالة.</p>
+    <button class="btn btn-ghost" id="terms-close" style="margin-top:16px;width:100%">فهمت</button>
+  </div>
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s) => document.querySelector(s);
+  $('#y').textContent = new Date().getFullYear();
+
+  // terms
+  const modal = $('#terms');
+  $('#terms-link').addEventListener('click', (e) => { e.preventDefault(); modal.classList.add('open'); });
+  $('#terms-close').addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.classList.remove('open'); });
+
+  // intake form
+  const form = $('#intake');
+  const err = $('#err'), ok = $('#ok-box'), btn = $('#send');
+  const show = (msg, isOk) => {
+    ok.textContent = msg;
+    ok.classList.toggle('show', !!isOk);
+    errors(msg, !isOk);
+  };
+  const errors = (m, on) => { err.textContent = on ? m : ''; };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = {
+      name: $('#f-name').value.trim(),
+      phone: $('#f-phone').value.trim(),
+      email: $('#f-email').value.trim(),
+      service: $('#f-service').value,
+      platform: $('#f-platform').value.trim(),
+      budget: $('#f-budget').value,
+      message: $('#f-msg').value.trim(),
+    };
+    if (!data.name) return errors('الاسم مطلوب', true);
+    if (!data.phone && !data.email) return errors('رقم الجوال أو البريد مطلوب', true);
+    if (data.email && !/^[^\s@]+@[^\s@]+\.[a-z]{2,24}$/i.test(data.email)) return errors('البريد الإلكتروني غير صالح', true);
+    if (data.message.length < 15) return errors('اكتب وصفًا أوضح (15 حرفًا على الأقل)', true);
+    if (!$('#f-consent').checked) return errors('يجب الموافقة على الشروط', true);
+
+    btn.disabled = true;
+    btn.textContent = 'جارٍ الإرسال…';
+    errors('', false);
+    try {
+      const r = await fetch('/api/intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error || 'فشل الإرسال');
+      show('✅ تم استلام طلبك — رقم المتابعة: ' + (j.ref || '—') + '. سيتواصل معك الفريق خلال 24 ساعة.', true);
+      form.reset();
+    } catch (ex) {
+      show('تم تجهيز رسالتك — اضغط الزر للتواصل عبر واتساب لإكمال الإرسال.', true);
+      const wa = 'https://wa.me/966500000000?text=' + encodeURIComponent(
+        `طلب خدمة — أبو نواف\nالاسم: ${data.name}\nالجوال: ${data.phone}\nالبريد: ${data.email}\nالخدمة: ${data.service}\nالمنصة: ${data.platform}\nالميزانية: ${data.budget}\n\n${data.message}`
+      );
+      ok.innerHTML = 'تعذّر الإرسال التلقائي — <a href="' + wa + '" target="_blank" rel="noopener noreferrer" style="color:#f5c451;font-weight:800">أرسل الطلب عبر واتساب الآن</a>';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'إرسال الطلب';
+    }
+  });
+})();
+</script>
+<!-- abunawaf:begin — طبقة التعزيز © 2026 أبو نواف · MIT -->
+  <meta name="abunawaf:name" content="ابونواف">
+  <meta name="abunawaf:tagline" content="هكر أخلاقي — استعادة وتأمين الحسابات">
+  <meta name="abunawaf:category" content="هوية · خدمات">
+  <meta name="abunawaf:polish" content="1">
+  <meta name="abunawaf:engine" content="2.0.0">
+  <meta name="abunawaf:directory" content="0">
+  <script defer src="assets/abunawaf/abunawaf-enhance.js" data-abunawaf="2.0.0"></script>
+  <!-- abunawaf:end -->
+</body>
+</html>

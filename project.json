@@ -13,5 +13,24 @@
   "readyForHosting": true,
   "files": [
     "index.html"
-  ]
+  ],
+  "enhanced": {
+    "engine": "AbuNawaf Enhance",
+    "version": "2.0.0",
+    "author": "Abu Nawaf — أبو نواف (Ethical Hacker)",
+    "year": 2026,
+    "license": "MIT",
+    "features": [
+      "brand-bar",
+      "command-palette",
+      "a11y",
+      "security-headers",
+      "self-hosted-fonts",
+      "pwa-manifest",
+      "json-ld",
+      "social-cards",
+      "hardened-apis"
+    ],
+    "hub": "https://abu-nawaf-hub.vercel.app"
+  }
 }
